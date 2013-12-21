@@ -2,7 +2,9 @@
   "name": "death-clock",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "hyperquest": "~0.1.8"
+  },
   "devDependencies": {
     "browserify": "~2.35.2",
     "uglifyjs": "~2.3.6",
@@ -15,7 +17,7 @@
     "build-js": "browserify app/js/main.js | uglifyjs -mc > static/bundle.js",
     "build-less": "lessc app/less/main.less static/main.css",
     "build": "npm run build-js && npm run build-less",
-    "watch-js": "watchify browser/main.js -o static/bundle.js -dv",
+    "watch-js": "watchify app/js/main.js -o static/bundle.js -dv",
     "watch-less": "lesswatcher --less_dir=app/less --css_dir=static",
     "watch": "npm run watch-js & npm run watch-css",
     "start": "node server.js",
