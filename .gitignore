@@ -1,2 +1,5 @@
 node_modules/
+static/bundle.js
+static/main.css
+*.log
 

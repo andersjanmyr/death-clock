@@ -7,11 +7,11 @@
   },
   "devDependencies": {
     "browserify": "~2.35.2",
-    "uglifyjs": "~2.3.6",
     "watchify": "~0.1.0",
     "tap": "~0.4.4",
     "less": "~1.5.1",
-    "lesswatcher": "~0.2.0"
+    "lesswatcher": "~0.2.0",
+    "uglify-js": "~2.4.8"
   },
   "scripts": {
     "build-js": "browserify app/js/main.js | uglifyjs -mc > static/bundle.js",

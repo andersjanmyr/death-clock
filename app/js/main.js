@@ -1,5 +1,5 @@
 'use strict';
 var hyperquest = require('hyperquest');
 
-document.body.appendChild('Browserify');
+document.querySelector('#content').textContent = 'Browserify';
 
