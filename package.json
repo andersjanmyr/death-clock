@@ -6,9 +6,9 @@
     "hyperquest": "~0.1.8"
   },
   "devDependencies": {
-    "browserify": "~2.35.2",
-    "watchify": "~0.1.0",
-    "tap": "~0.4.4",
+    "browserify": "~3.14.0",
+    "watchify": "~0.4.1",
+    "tap": "~0.4.6",
     "less": "~1.5.1",
     "lesswatcher": "~0.2.0",
     "uglify-js": "~2.4.8"
