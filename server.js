@@ -19,6 +19,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/status', function(req, resp) {
+    debug('Status requested');
     resp.send('To be or not to be, that is the question');
 });
 
@@ -36,7 +37,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+    app.use(function(err, req, res) {
         res.render('error', {
             message: err.message,
             error: err
@@ -46,7 +47,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
     res.render('error', {
         message: err.message,
         error: {}
@@ -54,7 +55,7 @@ app.use(function(err, req, res, next) {
 });
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log(app.get('env') + ' server listening on port ' + app.get('port'));
+    console.log(app.get('env') + ' server listening on port ' + app.get('port'));
 });
 
 module.exports = app;

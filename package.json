@@ -2,6 +2,41 @@
   "name": "death-clock",
   "version": "1.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:andersjanmyr/death-clock.git"
+  },
+  "scripts": {
+    "build-js": "browserify -t reactify app/js/main.js | uglifyjs -mc > static/bundle.js",
+    "build-less": "lessc app/less/main.less static/main.css",
+    "build": "npm run build-js && npm run build-less",
+    "watch-js": "watchify app/js/main.js -o static/bundle.js -dv",
+    "watch-less": "lesswatcher --less_dir=app/less --css_dir=static",
+    "watch": "npm run watch-js & npm run watch-css",
+    "start": "node server.js",
+    "test": "tap test/*.js",
+    "jshint": "jshint *.js lib/**/*.js"
+  },
+  "jshintConfig": {
+    "curly": false,
+    "indent": 4,
+    "latedef": "nofunct",
+    "unused": true,
+    "globalstrict": true,
+    "trailing": true,
+    "maxparams": 4,
+    "maxdepth": 2,
+    "maxcomplexity": 6,
+    "node": true,
+    "browser": true,
+    "jquery": true,
+    "globals": {
+      "before": true,
+      "describe": true,
+      "expect": true,
+      "it": true
+    }
+  },
   "dependencies": {
     "hyperquest": "^0.1.8",
     "express": "^4.0.0",
@@ -19,16 +54,7 @@
     "uglify-js": "^2.4.8",
     "reactify": "^0.5.1",
     "envify": "^0.2.0",
-    "react": "^0.8.0"
-  },
-  "scripts": {
-    "build-js": "browserify -t reactify app/js/main.js | uglifyjs -mc > static/bundle.js",
-    "build-less": "lessc app/less/main.less static/main.css",
-    "build": "npm run build-js && npm run build-less",
-    "watch-js": "watchify app/js/main.js -o static/bundle.js -dv",
-    "watch-less": "lesswatcher --less_dir=app/less --css_dir=static",
-    "watch": "npm run watch-js & npm run watch-css",
-    "start": "node server.js",
-    "test": "tap test/*.js"
+    "react": "^0.8.0",
+    "jshint": "^2.4.4"
   }
 }
