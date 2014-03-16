@@ -15,4 +15,4 @@ document.querySelector('#content').textContent = 'Browserify';
 // same result when it renders the component (you'll see a warning in the browser console
 // if it fails to render the same result - in which case there may be something out of whack
 // with the data you're initialising with in the browser vs the server)
-React.renderComponent(DeathClock({birthDate: '1969-03-18:08:22'}), contentDiv);
+React.renderComponent(DeathClock({birthDate: '1969-03-18T08:22'}), contentDiv);

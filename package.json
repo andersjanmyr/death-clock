@@ -43,7 +43,8 @@
     "morgan": "^1.0.0",
     "cookie-parser": "^1.0.1",
     "body-parser": "^1.0.0",
-    "debug": "^0.7.4"
+    "debug": "^0.7.4",
+    "moment": "^2.5.1"
   },
   "devDependencies": {
     "browserify": "^3.14.0",
