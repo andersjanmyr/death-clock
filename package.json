@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "hyperquest": "~0.1.8"
+    "hyperquest": "^0.1.8",
+    "express": "^4.0.0",
+    "morgan": "^1.0.0",
+    "cookie-parser": "^1.0.1",
+    "body-parser": "^1.0.0",
+    "debug": "^0.7.4"
   },
   "devDependencies": {
     "browserify": "~3.14.0",
