@@ -18,22 +18,31 @@ function timeToLive(age) {
     return moment.duration(moment.duration(80, 'years') - age);
 }
 
-module.exports = React.createClass({
+function calculateState(date) {
+    var birthDate = moment(date);
+    var now = moment();
+    var age = moment.duration(now - birthDate);
+    var ttl =  dateStruct(timeToLive(age));
+    return {
+        birthDate: birthDate,
+        age: age,
+        timeToLive: ttl
+    };
+}
 
+
+module.exports = React.createClass({
     getInitialState: function() {
-        var birthDate = moment(this.props.birthDate);
-        var now = moment();
-        var age = moment.duration(now - birthDate);
-        var ttl =  dateStruct(timeToLive(age));
-        return {
-            birthDate: birthDate,
-            age: age,
-            timeToLive: ttl
-        };
+        return calculateState(this.props.birthDate);
     },
 
-    // Then we just update the state whenever its clicked -
-    // you could imagine this being updated with the results of AJAX calls, etc
+    componentWillMount: function() {
+        var self = this;
+        setInterval(function() {
+            self.setState(calculateState(self.state.birthDate));
+        }, 1000);
+    },
+
     handleClick: function() {
         console.log('hello', arguments);
     },
@@ -41,14 +50,17 @@ module.exports = React.createClass({
     render: function() {
         return (
             <div className="death-clock" onClick={this.handleClick} >
-                <div>{this.state.birthDate.toISOString()}</div>
-                <div>{this.state.age.humanize()}</div>
-                <div>{this.state.timeToLive.years}</div>
-                <div>{this.state.timeToLive.months}</div>
-                <div>{this.state.timeToLive.days}</div>
-                <div>{this.state.timeToLive.hours}</div>
-                <div>{this.state.timeToLive.minutes}</div>
-                <div>{this.state.timeToLive.seconds}</div>
+                <div className='birth-date'>{this.state.birthDate.toISOString()}</div>
+                <div className='age'>{this.state.age.humanize()}</div>
+                <div>You will probably die in:</div>
+                <div className='time-to-live'>
+                    <div>{this.state.timeToLive.years} years,</div>
+                    <div>{this.state.timeToLive.months} months,</div>
+                    <div>{this.state.timeToLive.days} days,</div>
+                    <div>{this.state.timeToLive.hours} hours,</div>
+                    <div>{this.state.timeToLive.minutes} minutes, and</div>
+                    <div>{this.state.timeToLive.seconds} seconds</div>
+                </div>
             </div>
         );
     },
