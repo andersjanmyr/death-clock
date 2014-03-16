@@ -29,7 +29,6 @@
     "maxcomplexity": 6,
     "node": true,
     "browser": true,
-    "jquery": true,
     "globals": {
       "before": true,
       "describe": true,
@@ -55,6 +54,8 @@
     "reactify": "^0.5.1",
     "envify": "^0.2.0",
     "react": "^0.8.0",
-    "jshint": "^2.4.4"
+    "jshint": "^2.4.4",
+    "nodemon": "^1.0.15",
+    "react-tools": "^0.9.0"
   }
 }
