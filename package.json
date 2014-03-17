@@ -11,9 +11,9 @@
     "build-less": "lessc app/less/main.less static/main.css",
     "build": "npm run build-js && npm run build-less",
     "watch-js": "watchify app/js/main.js -t reactify -o static/bundle.js -dv",
-    "watch-less": "lesswatcher --less_dir=$(pwd)/app/less --css_dir=$(pwd)/static",
+    "watch-less": "nodemon --watch app/less/main.less --ext less --exec 'npm run' build-less",
     "start": "node server.js",
-    "watch-server": "nodemon server.js --ignore app --ignore staic",
+    "watch-server": "nodemon --ignore app --ignore static server.js",
     "watch": "npm run watch-js & npm run watch-less & npm run watch-server",
     "test": "tap test/*.js",
     "jshint": "jshint *.js lib/**/*.js"
