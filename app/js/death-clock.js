@@ -50,16 +50,20 @@ module.exports = React.createClass({
     render: function() {
         return (
             <div className="death-clock" onClick={this.handleClick} >
-                <div className='birth-date'>{this.state.birthDate.toISOString()}</div>
-                <div className='age'>{this.state.age.humanize()}</div>
-                <div>You will probably die in:</div>
+                <div className='birth-date'>When born on {this.state.birthDate.format('MMMM Do YYYY')}</div>
+                <div className='age'>Age {this.state.age.humanize()}</div>
+                <div className='time-to-live-label'>You will statistically die in:</div>
                 <div className='time-to-live'>
-                    <div>{this.state.timeToLive.years} years,</div>
-                    <div>{this.state.timeToLive.months} months,</div>
-                    <div>{this.state.timeToLive.days} days,</div>
-                    <div>{this.state.timeToLive.hours} hours,</div>
-                    <div>{this.state.timeToLive.minutes} minutes, and</div>
-                    <div>{this.state.timeToLive.seconds} seconds</div>
+                    <div>
+                        <span>{this.state.timeToLive.years} years,</span>
+                        <span>{this.state.timeToLive.months} months,</span>
+                        <span>{this.state.timeToLive.days} days,</span>
+                    </div>
+                    <div>
+                        <span>{this.state.timeToLive.hours} hours,</span>
+                        <span>{this.state.timeToLive.minutes} minutes, and </span>
+                        <span>{this.state.timeToLive.seconds} seconds</span>
+                    </div>
                 </div>
             </div>
         );
