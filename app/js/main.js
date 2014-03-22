@@ -9,7 +9,7 @@ var clockDiv = document.getElementById('clock');
 var quoteDiv = document.getElementById('quote');
 var skullDiv = document.getElementById('skull');
 
-React.renderComponent(DeathClock({birthDate: '1969-03-18T08:22'}), clockDiv);
+React.renderComponent(DeathClock({birthDate: '1969-03-18'}), clockDiv);
 React.renderComponent(Quote(), quoteDiv);
 
 setTimeout(function() {

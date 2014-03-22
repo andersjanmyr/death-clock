@@ -15,7 +15,10 @@ function dateStruct(duration) {
 }
 
 function timeToLive(age) {
-    return moment.duration(moment.duration(80, 'years') - age);
+    var yearsToLive = 80;
+    if (age.years() > yearsToLive)
+        yearsToLive = age.years() + 1;
+    return moment.duration(moment.duration(yearsToLive, 'years') - age);
 }
 
 function calculateState(date) {
