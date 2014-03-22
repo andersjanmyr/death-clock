@@ -50,10 +50,8 @@ module.exports = React.createClass({
     render: function() {
         return (
             <div className="death-clock" onClick={this.handleClick} >
-                <div className='birth-date'>When born on {this.state.birthDate.format('MMMM Do YYYY')}</div>
-                <div className='age'>Age {this.state.age.humanize()}</div>
-                <div className='time-to-live-label'>You will statistically die in:</div>
                 <div className='time-to-live'>
+                    <div className='time-to-live-label'>You will statistically die in</div>
                     <div>
                         <span>{this.state.timeToLive.years} years,</span>
                         <span>{this.state.timeToLive.months} months,</span>
@@ -64,6 +62,10 @@ module.exports = React.createClass({
                         <span>{this.state.timeToLive.minutes} minutes, and </span>
                         <span>{this.state.timeToLive.seconds} seconds</span>
                     </div>
+                </div>
+                <div className='age-and-birth'>
+                    <div className='birth-date'>Born {this.state.birthDate.format('MMMM Do YYYY')}</div>
+                    <div className='age'>Age {this.state.age.humanize()}</div>
                 </div>
             </div>
         );

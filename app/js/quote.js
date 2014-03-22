@@ -53,8 +53,7 @@ module.exports = React.createClass({
         return (
             <div className="quote-wrapper">
                 <div className='quote'>{this.state.quote}</div>
-                <div className='author'>{this.state.author}</div>
-                <div className='book'>{this.state.book}</div>
+                <div className='author'>— {this.state.author}</div>
             </div>
         );
     },

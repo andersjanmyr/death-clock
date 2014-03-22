@@ -1,29 +1,113 @@
 body {
     height: 100%;
+    background: rgba(5,1,5,1);
+    background: -moz-linear-gradient(left, rgba(5,1,5,1) 0%, rgba(44,57,35,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(5,1,5,1)), color-stop(100%, rgba(44,57,35,1)));
+    background: -webkit-linear-gradient(left, rgba(5,1,5,1) 0%, rgba(44,57,35,1) 100%);
+    background: -o-linear-gradient(left, rgba(5,1,5,1) 0%, rgba(44,57,35,1) 100%);
+    background: -ms-linear-gradient(left, rgba(5,1,5,1) 0%, rgba(44,57,35,1) 100%);
+    background: linear-gradient(to right, rgba(5,1,5,1) 0%, rgba(44,57,35,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#050105', endColorstr='#2c3923', GradientType=1 );
 }
+
+.main-color() {
+    color: white;
+}
+.secondary-color() {
+    color: #aaa;
+}
+.main-font() {
+    font-family: 'American Typewriter' 'Times New Roman';;
+}
+.secondary-font() {
+    font-family: 'brush script mt' script;
+}
+
 
 #content {
-    text-align: center;
-    width: 50%;
+    text-align: left;
+    width: 80%;
     margin: auto;
+    color: white;
 }
 
-.death-clock {
-    margin: 5px;
-    font-size: 32pt;
-    font-family: 'brush script mt' script;
+header {
+    margin-top: 20px;
 }
 
-.time-to-live div {
-    margin: 5px;
-    font-size: 20pt;
-    font-family: 'brush script mt' script;
+#skull {
+    float: left;
+    width: 80px;
+    margin-right: 50px;
+    transition: transform 60s;
+    -webkit-transition: -webkit-transform 60s;
+    -moz-transition: -moz-transform 60s;
 }
+
+.rotate {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+}
+
 
 #title {
-    font-size: 44px;
+    font-size: 64px;
+    .main-font();
 }
+
 
 #quote {
     clear: both;
 }
+
+
+.quote-wrapper {
+    position: relative;
+    top: 50px;
+    margin: 50px auto;
+    width: 400px;
+}
+
+.quote {
+    .secondary-font();
+    font-size: 36pt;
+    line-height: 0.8em;
+}
+
+.author {
+    .secondary-color();
+    .main-font();
+    font-size: 22pt;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+
+#clock {
+    clear: both;
+    margin-top: 150px;
+}
+.death-clock {
+    margin: 5px;
+    font-family: 'American Typewriter' 'Times New Roman';
+    font-size: 18pt;
+    span {
+        padding-left: 5px;
+    }
+}
+
+.age-and-birth {
+    float: right;
+}
+
+.time-to-live {
+    float: left;
+    text-align: left;
+}
+
+.time-to-live-label {
+    .secondary-color();
+}
+
+
