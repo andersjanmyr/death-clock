@@ -16,7 +16,8 @@
     "watch-server": "nodemon --ignore app --ignore static server.js",
     "watch": "npm run watch-js & npm run watch-less & npm run watch-server",
     "test": "tap test/*.js",
-    "jshint": "jshint *.js lib/**/*.js"
+    "jshint": "jshint *.js lib/**/*.js",
+    "deploy": "./deploy.sh"
   },
   "jshintConfig": {
     "curly": false,
