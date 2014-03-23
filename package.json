@@ -17,7 +17,7 @@
     "watch": "npm run watch-js & npm run watch-less & npm run watch-server",
     "test": "tap test/*.js",
     "jshint": "jshint *.js lib/**/*.js",
-    "deploy": "./deploy.sh"
+    "deploy": "./bin/deploy.sh"
   },
   "jshintConfig": {
     "curly": false,
