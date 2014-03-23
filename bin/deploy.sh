@@ -7,7 +7,7 @@ git checkout deploy
 git merge master --no-edit
 npm run build.js
 npm run build-less
-if $(git commit -am 'New deploy'); then
+if $(git commit -am Deploy); then
   echo 'Changes Committed'
 fi
 git push heroku deploy:master
