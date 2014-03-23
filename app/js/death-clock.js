@@ -46,13 +46,9 @@ module.exports = React.createClass({
         }, 1000);
     },
 
-    handleClick: function() {
-        console.log('hello', arguments);
-    },
-
     render: function() {
         return (
-            <div className="death-clock" onClick={this.handleClick} >
+            <div className="death-clock">
                 <div className='time-to-live'>
                     <div className='time-to-live-label'>You will statistically die in</div>
                     <div>

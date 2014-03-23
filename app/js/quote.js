@@ -35,23 +35,34 @@ module.exports = React.createClass({
 
     getInitialState: function() {
         return {
-            quote: '',
-            author: '',
-            book: ''
+            quote: 'To be or not to be that is the question',
+            author: 'Shakespeare'
         };
     },
 
     componentWillMount: function() {
+        this.loadRandomQuote();
+        this.resetInterval();
+    },
+
+    resetInterval: function() {
+        if (this.interval)
+            clearInterval(this.interval);
         var self = this;
-        self.loadRandomQuote();
-        setInterval(function() {
+        self.interval = setInterval(function() {
             self.loadRandomQuote();
         }, 30000);
     },
 
+    handleClick: function() {
+        this.loadRandomQuote();
+        this.resetInterval();
+    },
+
+
     render: function() {
         return (
-            <div className="quote-wrapper">
+            <div className="quote-wrapper"  onClick={this.handleClick} >
                 <div className='quote'>{this.state.quote}</div>
                 <div className='author'>— {this.state.author}</div>
             </div>
