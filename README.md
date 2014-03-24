@@ -16,6 +16,9 @@ $ npm start
 
 ## Development
 
+The application uses Browserify, React, Less for client side development and
+Express 4 for server side.
+
 ```
 # Start a watcher, for browserify, less, and server startup
 $ npm run watch
