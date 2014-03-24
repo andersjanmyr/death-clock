@@ -62,7 +62,11 @@ module.exports = React.createClass({
 
     render: function() {
         return (
-            <div className="quote-wrapper"  onClick={this.handleClick} >
+            <div className="quote-wrapper"
+                title='Click for a new quote, or just wait...'
+                onClick={this.handleClick}
+                onTouchEnd={this.handleClick}
+                >
                 <div className='quote'>{this.state.quote}</div>
                 <div className='author'>— {this.state.author}</div>
             </div>

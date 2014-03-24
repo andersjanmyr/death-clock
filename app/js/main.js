@@ -11,6 +11,7 @@ var dateFormDiv = document.getElementById('date-form');
 var clockDiv = document.getElementById('clock');
 var quoteDiv = document.getElementById('quote');
 
+React.initializeTouchEvents(true);
 React.renderComponent(DateForm(), dateFormDiv);
 React.renderComponent(Quote(), quoteDiv);
 var deathClock = DeathClock({birthDate: '1969-03-18'});
