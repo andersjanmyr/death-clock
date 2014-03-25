@@ -25,6 +25,10 @@ module.exports = React.createClass({
         });
     },
 
+    handleClick: function(event) {
+        event.target.setSelectionRange(0, event.target.value.length);
+    },
+
 
     render: function() {
         var classString = this.state.valid ? 'date-field valid' : 'date-field invalid';
@@ -36,7 +40,9 @@ module.exports = React.createClass({
                 className={classString}
                 value={this.state.date}
                 placeholder="yyyy-mm-dd"
-                onChange={this.handleChange}/>
+                onChange={this.handleChange}
+                onClick={this.handleClick}
+            />
         </form>
         );
     },
