@@ -15,7 +15,7 @@
     "start": "node server.js",
     "watch-server": "nodemon --ignore app --ignore static server.js",
     "watch": "npm run watch-js & npm run watch-less & npm run watch-server",
-    "test": "tap test/*.js",
+    "test": "mocha --reporter spec test",
     "jshint": "jshint *.js lib/**/*.js",
     "deploy": "./bin/deploy.sh"
   },
@@ -49,7 +49,6 @@
     "browserify": "^3.14.0",
     "moment": "^2.5.1",
     "watchify": "^0.6.2",
-    "tap": "^0.4.6",
     "less": "^1.5.1",
     "uglify-js": "^2.4.8",
     "reactify": "^0.5.1",
