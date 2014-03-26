@@ -36,7 +36,6 @@ function calculateState(date) {
 
 module.exports = React.createClass({
     setBirthDate: function(birthDate) {
-        console.log(birthDate);
         this.setState(calculateState(birthDate));
     },
 

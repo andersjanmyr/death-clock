@@ -28,7 +28,6 @@ module.exports = React.createClass({
         var self = this;
         tinyxhr('/quotes/random', function(err, data) {
             var quote = JSON.parse(data);
-            console.log(err, quote);
             self.setState(quote);
         });
     },
