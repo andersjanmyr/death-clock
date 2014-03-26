@@ -35,7 +35,7 @@ module.exports = React.createClass({
         if (this.state.valid)
             location.hash = this.state.date;
         return (
-        <form className="date-form">
+        <form id="date-form">
             <input type="text"
                 className={classString}
                 value={this.state.date}
