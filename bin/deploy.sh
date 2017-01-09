@@ -12,4 +12,4 @@ if git commit -am Deploy; then
 fi
 git push heroku deploy:master
 git checkout master
-git stash pop
+git stash pop || true
